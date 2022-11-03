@@ -53,4 +53,4 @@ Route::get('/categories/{category:slug}',function(Category $category){
 });
 
 
-// video 8
+// video 9
