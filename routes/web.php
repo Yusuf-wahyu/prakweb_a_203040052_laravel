@@ -47,13 +47,16 @@ Route::get('/categories', function(){
     ]);
 });
 
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
 
-
-// video 14
+// video 16
