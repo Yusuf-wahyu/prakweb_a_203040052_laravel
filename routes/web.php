@@ -68,4 +68,4 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-// video 18
+// video 19
